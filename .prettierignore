@@ -1,0 +1,11 @@
+# Add files here to ignore them from prettier formatting
+
+/.idea/
+/.vscode/
+/dist/
+/bootstrap/cache/
+/storage/
+/node_modules/
+/vendor/
+/public/
+_ide-helper.php
