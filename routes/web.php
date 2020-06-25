@@ -14,5 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $indexHtmlPath = public_path() . '/index.html';
+
+    if (File::exists($indexHtmlPath)) {
+        return response()->file($indexHtmlPath);
+    }
+
+    return response('Please run "ng build --prod" from "resources/frontend" directory first.', 500);
 });
