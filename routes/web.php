@@ -13,12 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $indexHtmlPath = public_path() . '/index.html';
-
-    if (File::exists($indexHtmlPath)) {
-        return response()->file($indexHtmlPath);
-    }
-
-    return response('Please run "ng build --prod" from "resources/frontend" directory first.', 500);
-});
+Route::get('/{any}', 'HomeController@index')->where('any', '^(?!api|oauth).*$');
