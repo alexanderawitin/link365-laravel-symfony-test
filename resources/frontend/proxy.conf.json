@@ -1,0 +1,12 @@
+{
+    "/api": {
+        "target": "http://link365-laravel-symfony-test.test",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/oauth": {
+        "target": "http://link365-laravel-symfony-test.test",
+        "secure": false,
+        "changeOrigin": true
+    }
+}
