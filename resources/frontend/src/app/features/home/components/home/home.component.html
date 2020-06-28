@@ -1,0 +1,11 @@
+<div class="container">
+    <app-city *ngIf="weatherData" [weatherData]="weatherData"></app-city>
+    <fa-icon icon="cog" (click)="changeCities()"></fa-icon>
+</div>
+
+<div *ngIf="modal" class="modal">
+    <div class="modalContainer">
+        <input type="text" [(ngModel)]="cityName" (keydown.enter)="closeModal()" />
+        <button (click)="closeModal()">Save</button>
+    </div>
+</div>

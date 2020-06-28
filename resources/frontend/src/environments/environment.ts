@@ -4,6 +4,9 @@
 
 export const environment = {
     production: false,
+    apiUrl: '/api',
+    passportClientId: '2',
+    passportClientSecret: 'A7CSBSDRURnjWeC2Zu0K91GAafbAMsDtubHbb7Pe',
 };
 
 /*

@@ -1,0 +1,57 @@
+<div class="city">
+    <div class="details">
+        <div class="primary">
+            <div class="stats">
+                <h1 class="city-name">{{ weatherData.resolved_city }}</h1>
+                <h5 class="city-condition">{{ changeDesc(weatherData.condition) }}</h5>
+                <h2 class="city-temp">{{ round(weatherData.temp) }}&deg;</h2>
+            </div>
+        </div>
+        <div class="secondary">
+            <div class="row">
+                <div>
+                    <span class="name">HIGH</span>
+                    <span class="num">{{ round(weatherData.temp_max) }}&deg;<span>C</span></span>
+                </div>
+                <div>
+                    <span class="name">WIND</span>
+                    <span class="num"
+                        >{{ weatherData.wind_speed }} <span>{{ windDirection(weatherData.wind_direction) }}</span></span
+                    >
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <span class="name">LOW</span>
+                    <span class="num">{{ round(weatherData.temp_min) }}&deg;<span>C</span></span>
+                </div>
+                <div>
+                    <span class="name">HUMIDITY</span>
+                    <span class="num">{{ weatherData.humidity }} <span>%</span></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <span class="name">PRESSURE</span>
+                    <span class="num" *ngIf="weatherData.pressure">{{ round(weatherData.pressure) }}<span>hPa</span></span>
+                </div>
+                <div>
+                    <span class="name">VIS</span>
+                    <span class="num">{{ weatherData.visibility }}<span>m</span></span>
+                </div>
+            </div>
+            <div class="row forecast">
+                <div *ngFor="let day of fiveDay" class="day">
+                    <div class="dayName">{{ convertDay(day) }}</div>
+                    <div>
+                        <fa-icon [icon]="getIcon(day.weather[0].main)"></fa-icon>
+                    </div>
+                    <div>{{ round(day.main.temp_max) }}&deg;<span>C</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="background {{ weatherData.condition }}"></div>
+</div>
