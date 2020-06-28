@@ -28,4 +28,14 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+
+    'open_weather_map' => [
+        'key' => env('OPEN_WEATHER_MAP_API_KEY'),
+        'cache_ttl' => env('OPEN_WEATHER_MAP_API_CACHE_TTL', 1),
+    ],
+
+    'destination_weather' => [
+        'key' => env('DESTINATION_WEATHER_API_KEY'),
+        'cache_ttl' => env('DESTINATION_WEATHER_API_CACHE_TTL', 1),
+    ],
 ];

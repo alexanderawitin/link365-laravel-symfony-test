@@ -5,7 +5,7 @@
 /dist/
 /bootstrap/cache/
 /storage/
-/node_modules/
+/**/node_modules/
 /vendor/
 /public/
 _ide-helper.php
